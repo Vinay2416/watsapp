@@ -1,0 +1,30 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.header {
+    background-color: $secondary-background-color;
+    padding: 12px 32px;
+    @include set-flex-styles(center, space-between);
+
+    .group {
+        gap: 12px;
+        @include set-vertical-flex(center);
+        .group-profile-pic {
+            @include set-img-styles(50px, 50px, 2px solid white);
+            img {
+                width: 20px;
+                height: 15px;
+            }
+        }
+    }
+
+    h2 {
+        @include set-font-styles($header-font-size, $normal-font-weight, $primary-text-color, -0.5px);
+    }
+
+    img {
+        width: 17.5px;
+        height: 20px;
+        cursor: pointer;
+    }
+}

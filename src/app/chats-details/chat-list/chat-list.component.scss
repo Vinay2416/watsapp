@@ -1,0 +1,109 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.search-bar-filter {
+    padding: 20px 23px 12px 29px;
+    display: flex;
+    align-items: center;
+    position: relative;
+    gap: 26px;
+    border-bottom: 1px solid $border-color;
+
+    .search-bar {
+        border-radius: 10px;
+        background: $secondary-background-color;
+        flex: 1;
+        padding: 15px 20px 13px 69px;
+        @include set-font-styles($text-font-size, $normal-font-weight, $primary-text-color, -0.35px);
+    }
+
+    .search-icon {
+        position: absolute;
+        left: 49px;
+        top: 30px;
+    }
+}
+
+.chats-list {
+    padding-right: 6px;
+    height: 78vh;
+    overflow-y: auto;
+
+    a {
+        padding: 20px 9px 20px 29px;
+        display: flex;
+        gap: 10px;
+        position: relative;
+    }
+
+    li a:hover {
+        background-color: rgba(0, 0, 0, 0.03);
+    }
+
+    li a::before {
+        content: '';
+        position: absolute;
+        width: 328px;
+        height: 1px;
+        background-color: $border-color;
+        right: 0;
+        bottom: 0;
+    }
+
+    li a {
+        .chat-pic {
+            @include set-img-styles(56px, 56px, none);
+            img {
+                width: 25.088px;
+                height: 18.816px;
+            }
+        }
+    }
+
+    .chat-descrip {
+        display: flex;
+        justify-content: space-between;
+        flex: 1;
+        margin: 4.5px 0;
+
+        .chat-title {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+
+            p:first-child {
+                @include set-font-styles($header-font-size, $bold-font-weight, $primary-text-color, -0.5px);
+            }
+
+            p:last-child {
+                @include set-font-styles($medium-font-size, $normal-font-weight, $primary-text-color, -0.4px);
+            }
+        }
+
+        .chat-date {
+            @include set-font-styles($text-font-size, $bold-font-weight, $primary-text-color, -0.35px);
+        }
+    }
+
+    .selectedChat {
+        background-color: $highlight-background-color;
+    }
+
+    &::-webkit-scrollbar {
+        width: 8px;
+    }
+
+    &::-webkit-scrollbar-track {
+        background: white;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        background: $scrollbar-thumb-color;
+    }
+}
+dialog {
+    border: none;
+    box-shadow: 0 0 10px grey;
+    left: 370px;
+    top: 150px;
+}

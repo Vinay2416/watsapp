@@ -1,0 +1,21 @@
+@import '../../../styles/mixins';
+@import '../../../styles/variables';
+
+.header {
+    background-color: $secondary-background-color;
+    @include set-flex-styles(center, space-between);
+    padding: 12px 23px 12px 29px;
+
+    .group {
+        gap: 10px;
+        @include set-vertical-flex(center);
+
+        div {
+            @include set-img-styles(50px, 50px, 2px solid white);
+        }
+
+        h2 {
+            @include set-font-styles($header-font-size, $normal-font-weight, $primary-text-color, -0.5px);
+        }
+    }
+}

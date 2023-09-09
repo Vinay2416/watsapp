@@ -1,0 +1,23 @@
+<div class="group-chat" *ngIf="currentChat">
+    <app-chat-details-header (customEvent)="handleDelete($event)" [chatName]="currentChat.name"></app-chat-details-header>
+    <div class="msgs" #scrollmsgs>
+        <div class="created-date">
+            <p *ngIf="currentChat">
+                The group has been created<span class="time">{{ getTime(currentChat.creationDate) }}</span>
+            </p>
+        </div>
+        <li *ngFor="let message of msgs" [class.right]="!message.isAnonymous">
+            <p class="msg" [class.differentUser]="message.isSameUser">
+                {{ message.msg }}
+                <span class="time">{{ getTime(message.date) }}</span>
+            </p>
+        </li>
+    </div>
+    <div class="message-entry">
+        <div class="user-pic">
+            <img *ngIf="showImage" src="../../../assets/anonymous.png" (click)="toggleImage()" alt="Image" [class.rotate]="rotate" />
+            <img *ngIf="!showImage" src="../../../assets/known-user.png" (click)="toggleImage()" alt="Image" [class.rotate]="rotate" />
+        </div>
+        <input [(ngModel)]="newMessage" placeholder="Type a message" (keyup.enter)="sendMessage()" />
+    </div>
+</div>

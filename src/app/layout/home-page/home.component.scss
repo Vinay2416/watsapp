@@ -1,0 +1,14 @@
+.info {
+    display: flex;
+    height: 100vh;
+
+    .left {
+        flex-shrink: 0;
+        width: 425px;
+    }
+
+    .right {
+        flex: 1;
+        min-width: 400px;
+    }
+}

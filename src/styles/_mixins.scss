@@ -1,0 +1,27 @@
+@mixin set-font-styles($font-size, $font-weight, $color, $letter-spacing) {
+    color: $color;
+    font-family: 'Work Sans';
+    font-size: $font-size;
+    font-weight: $font-weight;
+    letter-spacing: $letter-spacing;
+}
+
+@mixin set-flex-styles($align-items, $justify-content) {
+    display: flex;
+    align-items: $align-items;
+    justify-content: $justify-content;
+}
+
+@mixin set-vertical-flex($value) {
+    display: flex;
+    align-items: $value;
+}
+
+@mixin set-img-styles($height, $width, $border) {
+    background-color: #cfd5d7;
+    width: $width;
+    height: $height;
+    border: $border;
+    border-radius: 50%;
+    @include set-flex-styles(center, center);
+}
